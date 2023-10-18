@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+}
+
+/* navbar */
+main {
+  padding: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(15, 12, 12, 0.8); /* Transparent black background */
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.head a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  position: relative; /* Add this property for positioning */
+  color: #fff; /* Set the text color to white */
+}
+
+.head a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.head a:hover::before {
+  transform: scaleX(1);
+}
+
+nav a {
+  font-weight: lighter;
+  font-size: 1.3rem;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Content styles */
+.chatbox {
+  display: flex;
+  flex: 1;
+}
+.friendList {
+  background-color: #040d12;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 2px 20px;
+  font-size: 22px;
+  min-height: 100vh;
+  flex: 1;
+}
+/* .friendList h4 {
+  background-color: #133131;
+  border-radius: 10px;
+  padding: 10px;
+} */
+.user {
+  background-color: #183d3d;
+  border: 5px solid #336868;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.user:hover {
+  background-color: #2f6868;
+  border: 5px solid #133131;
+  border-radius: 12px;
+}
+.chat {
+  background-color: #183d3d;
+  color: #ccc;
+  display: flex;
+  padding: 20px;
+  font-size: 24px;
+  min-height: 100vh;
+  flex: 3;
+  flex-direction: column;
+}
+.msgBox {
+  flex: 10;
+  background-color: #224e4e;
+  border-radius: 15px;
+}
+.msg {
+  flex: 1;
+}
+.msg input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 80%;
+  border-radius: 4px;
+}
+
+.sendBtn {
+  margin: 9px;
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 19px;
+  cursor: pointer;
+}
+.sendBtn:hover {
+  background-color: blueviolet;
+}
+/* Register */
+form.register {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+form.register h1 {
+  text-align: center;
+  font-size: 24px;
+}
+
+form.register label {
+  display: block;
+  margin: 10px 0;
+}
+
+form.register input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+form.register button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form.register button:hover {
+  background-color: #0056b3;
+}
+
+form.register a {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+form.register p.error {
+  color: red;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* NotFound */
+.conta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.conta h1 {
+  color: red;
+  font-size: 36px;
+}
+
+.conta p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 930px) {
+  Styles for screens between 930px and 500px main {
+    padding: 5px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Allow content to take the full width */
+  }
+
+  .head {
+    padding: 20px; /* Adjust the header padding */
+  }
+
+  .head a {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+
+  .post {
+    flex-direction: column; /* Stack posts vertically on smaller screens */
+  }
+
+  .image {
+    flex: none;
+    border-radius: 5px;
+    height: 300px;
+  }
+
+  .image img {
+    border-radius: 5px; /* Reset image border-radius */
+  }
+
+  .content-details {
+    flex: none; /* Disable content flex for smaller screens */
+    padding: 10px; /* Adjust content padding */
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+  }
+
+  .post-info {
+    font-size: 0.8rem;
+  }
+
+  .create-post {
+    max-width: 100%;
+  }
+  form.login,
+  form.register {
+    max-width: 100%;
+    margin-top: 5%;
+  }
+  form.login h1,
+  form.register h1 {
+    font-size: 18px;
+  }
+  form.login label,
+  form.register label {
+    margin: 5px 0;
+  }
+  form.login input,
+  form.register input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  form.login button,
+  form.register button {
+    font-size: 14px;
+  }
+  form.login p.error,
+  form.register p.error {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    margin-top: 10%; /* Increase top margin for smaller screens */
+  }
+
+  .head {
+    padding: 10px; /* Further reduce header padding */
+  }
+
+  .head a {
+    font-size: 0.9rem; /* Reduce font size for even smaller screens */
+  }
+  .image {
+    flex: none;
+    border-radius: 5px;
+    height: 200px;
+  }
+  .content-details {
+    flex: none;
+    padding: 8px;
+  }
+  .post-title {
+    font-size: 1.2rem; /* Reduce post title font size */
+  }
+
+  .post-info {
+    font-size: 0.6rem; /* Reduce post info font size */
+  }
+  .editBtn {
+    font-size: 0.7rem;
+  }
+  .logo {
+    font-size: 1.2rem; /* Adjust logo font size */
+  }
+}
