@@ -2,6 +2,8 @@ const express = require("express");
 const User = require("./models/User");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const multer = require("multer");
+const uploadMiddelware = multer({ dest: "uploads/" });
 
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
@@ -9,10 +11,11 @@ const bcrypt = require("bcryptjs");
 const ws = require("ws");
 
 require("dotenv").config();
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 const app = express();
 app.use(express.json());
-const port = 4000;
+const port = 4040;
 const jwtSecret = process.env.JWT_SECRET;
 const salt = bcrypt.genSaltSync(10);
 mongoose
@@ -64,7 +67,7 @@ app.post("/register", async (req, res) => {
 });
 //profile
 app.get("/profile", (req, res) => {
-  const token = req.cookies?.token;
+  const { token } = req.cookies;
   if (token) {
     jwt.verify(token, jwtSecret, {}, (err, userData) => {
       if (err) {
